@@ -1,24 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { Fragment } from 'react';
+import Profile from './Profile/Profile';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import hazem from './Hazem.jpg';
 
+function handleName(fullName){
+  alert(`My name is: ${fullName}.`);
+}
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Profile /*fullName='Hazem Housseini'*/ bio='Here is my bio!' profession='Software Developer' handleName={handleName}> {/* I removed fullName to check for default props */}
+          <img src={hazem} alt='showMe' className='imgCont'/>  {/* This child is required and set as a default prop children */}
+      </Profile>
+    </Fragment>
   );
 }
 
